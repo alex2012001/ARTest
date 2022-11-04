@@ -6,19 +6,27 @@ namespace ARTest
     {
         [SerializeField] private UICanvas uiCanvas;
 
+        private ObjectColorSwitcher _colorSwitcher;
+        
         private void Update()
         {
             if (Physics.Raycast(transform.position, transform.forward, out var raycastHit))
             {
-                var colorSwitcher = raycastHit.collider.gameObject.GetComponent<ObjectColorSwitcher>();
+                _colorSwitcher = raycastHit.collider.gameObject.GetComponent<ObjectColorSwitcher>();
                 
-                if (colorSwitcher!=null)
+                if (_colorSwitcher!=null)
                 {
-                    uiCanvas.SetActiveUseButton(true, colorSwitcher);
+                    _colorSwitcher.SetOutLine(true);
+                    uiCanvas.SetActiveUseButton(true, _colorSwitcher);
                 }
             }
             else
             {
+                if (_colorSwitcher != null)
+                {
+                    _colorSwitcher.SetOutLine(false);
+                }
+                
                 uiCanvas.SetActiveUseButton(false);
             }
         }
