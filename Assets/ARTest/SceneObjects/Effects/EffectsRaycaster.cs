@@ -1,5 +1,3 @@
-using System;
-using ARTest.SceneObjects.Effects.Realization;
 using ARTest.SceneObjects.Realization;
 using ARTest.UI;
 using UnityEngine;

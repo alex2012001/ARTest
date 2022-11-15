@@ -1,5 +1,4 @@
-﻿
-namespace ARTest.SceneObjects.Effects
+﻿namespace ARTest.SceneObjects.Effects
 {
     public interface IEffect
     {

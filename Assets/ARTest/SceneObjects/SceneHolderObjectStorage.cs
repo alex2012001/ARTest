@@ -45,7 +45,7 @@ namespace ARTest.SceneObjects
             return null;
         }
 
-        public void Delete<T>(T obj) where T : SceneObject
+        public void Delete<T>() where T : SceneObject
         {
             var type = typeof(T);
             
